@@ -11,7 +11,6 @@ body {
     color: #333;
     background-color: #f8f9fa;
 }
-
 header {
     background-color: #00060d;
     color: #fff;
@@ -22,7 +21,6 @@ header {
     z-index: 1000;
     font-size: large;
 }
-
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -33,6 +31,44 @@ header {
     list-style: none;
     display: flex;
 }
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .line {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #007bff;
+        width: 200px;
+        transform: translateX(100%);
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .nav-links.active {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+}
+
 
 .nav-links li {
     margin: 0 1rem;
